@@ -74,7 +74,8 @@
 
   /* WRITE YOUR HOMEWORK SCRIPTS BELOW HERE */
 
-  function halfNumber(num) {
+
+function halfNumber(num) {
   var half = num / 2;
   document.getElementById("solution").innerHTML = 'Half of ' + num + ' is ' + half;
 }
@@ -97,11 +98,21 @@ function calculatePercentage() {
 var percentButton = document.getElementById("percent-button");
 percentButton.addEventListener("click", calculatePercentage);
 
+function calculateInteger() {
+  var num = document.getElementById("int-input").value;
+  var roundedNum = Math.ceil(parseFloat(num));
+  
+  document.getElementById("solution").innerHTML = num + ' rounded to the nearest whole number is ' + roundedNum;
+}
+
+var intButton = document.getElementById("int-button");
+intButton.addEventListener("click", calculateInteger);
+
 function calculateArea() {
   var radius = document.getElementById("area-input").value;
-  var area = Math.PI * radius * radius;
+  var area = Math.PI * Math.pow(parseFloat(radius), 2);
   
-  document.getElementById("solution").innerHTML = 'The area of a circle with a radius of ' + radius + ' is ' + area.toFixed(2);
+  document.getElementById("solution").innerHTML = 'The area of a circle with a radius of ' + radius + ' is ' + area;
 }
 
 var areaButton = document.getElementById("area-button");
